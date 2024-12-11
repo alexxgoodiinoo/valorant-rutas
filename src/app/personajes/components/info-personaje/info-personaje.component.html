@@ -1,0 +1,26 @@
+<div class="text-white">
+  <h2>Información del personaje</h2>
+  <p><strong>Nombre:</strong> {{ personajeSeleccionado?.data?.displayName }}</p>
+  <p>
+    <strong>Descripción:</strong> {{ personajeSeleccionado?.data?.description }}
+  </p>
+  <p>
+    <strong>Rol:</strong> {{ personajeSeleccionado?.data?.role?.displayName }}
+  </p>
+  <img [src]="personajeSeleccionado?.data?.displayIcon" alt="Icono personaje" />
+  <br />
+  <br />
+  <h2>Habilidades del personaje</h2>
+  <ul *ngFor="let habilidad of habilidadesPersonaje">
+    <li>
+      <p>{{ habilidad.displayName }}</p>
+      <p>{{ habilidad.description }}</p>
+      <img
+        [src]="habilidad.displayIcon"
+        alt="habilidad personaje"
+        width="200px"
+       
+      />
+    </li>
+  </ul>
+</div>

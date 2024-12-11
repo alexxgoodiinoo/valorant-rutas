@@ -1,0 +1,10 @@
+<div class="text-white">
+    <h2>Información del arma</h2>
+    <p><strong>Coste del arma: </strong>{{armaSeleccionada?.data?.shopData?.cost}} créditos</p>
+    <p><strong>Categoría:</strong> {{armaSeleccionada?.data?.shopData?.category}}</p>
+    <br>
+    <h2>Skins de {{armaSeleccionada?.data?.displayName}}</h2>
+    <ul *ngFor="let skin of skinArma">
+        <li><p>{{skin.displayName}}</p><img [src]="skin.displayIcon" alt="Icono skin"></li>
+    </ul>
+</div>

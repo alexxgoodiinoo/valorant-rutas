@@ -1,0 +1,25 @@
+<h2 class="text-white">Armas</h2>
+<hr class="border border-white border-2 opacity-50">
+
+<div class="row">
+    <div class="col">
+        <h3 class="text-white">Busqueda por Armas</h3>
+        <select class="form-select" (change)="onArmaChange($event)">
+            <option [value]="">Seleccione un arma</option>
+            <option *ngFor="let arma of armas" [value]="arma.uuid">{{arma.displayName}}</option>
+        </select>
+    </div>
+</div>
+<br>
+
+<shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
+<div class="row text-white" *ngIf="isSeleccionado"> 
+    <div class="col"> 
+        <h2>{{ armaSeleccionada?.data?.displayName }} </h2> 
+        <p>UUID: {{ armaSeleccionada?.data?.uuid }}</p> 
+        <img [src]="armaSeleccionada?.data?.displayIcon" alt="Icono del arma"> 
+        <br>
+        <br>
+        <p><a [routerLink]="['/agents/byArma/',armaSeleccionada?.data?.uuid]" class="btn btn-primary">Información del arma</a></p>
+    </div>
+</div>
